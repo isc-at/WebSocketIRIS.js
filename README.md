@@ -4,12 +4,12 @@
  It is also NOT serviced by InterSystems Support !   
 ~~~  
 
-This is now the version compatible to IRIS unsing _IRIS Native API for Node.js_   
+This is now the version compatible to IRIS using _IRIS Native API for Node.js_   
 which is significantly different from the interface availaible for Caché.  
 
-Node / JavaScript have wide reputation to work as a WebSocket client.  
-By using the IRIS adapter it becomes easy to control it and to consume the results as a   
-Client for WebSocket Servers and to collect the replies in Caché, Ensemble, ..   
+Node / JavaScript have wide reputation to work as WebSocket client.  
+By using the IRIS adapter it becomes easy to control and to consume the results as a   
+Client for WebSocket Servers and to collect the replies in IRIS.   
 
 I used node-v10.15.1-x64.msi and intersystems-iris-native package
 
@@ -24,7 +24,8 @@ You provide a Global for input:
      ^WsockIn(5)="for replies"
      ^WsockIn(6)="exit"
 
-and with this echo server you get back a Global as output
+and from echo server you get back a Global as output  
+written by Node.js using the Native API for Node.js
 
      ^WsockOut(0)=6
      ^WsockOut(1)="Hello"
