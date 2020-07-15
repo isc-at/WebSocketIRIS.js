@@ -4,7 +4,9 @@
  It is also NOT serviced by InterSystems Support !   
 ~~~  
 
-This is now the version compatible to IRIS unsing _IRIS Native API for Node.js_  
+This is now the version compatible to IRIS unsing _IRIS Native API for Node.js_   
+which is significantly different from the interface availaible for Caché.  
+
 Node / JavaScript have wide reputation to work as a WebSocket client.  
 By using the IRIS adapter it becomes easy to control it and to consume the results as a   
 Client for WebSocket Servers and to collect the replies in Caché, Ensemble, ..   
