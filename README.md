@@ -1,10 +1,10 @@
 ~~~
- This is a coding example working on Cache 2018.1.3  
+ This is a coding example working on IRIS 2020.1  
  It will not be kept in synch with new versions      
  It is also NOT serviced by InterSystems Support !   
 ~~~  
 
-This is now the version compatible to IRIS unsing *IRIS Native API for Node.js*
+This is now the version compatible to IRIS unsing _IRIS Native API for Node.js_  
 Node / JavaScript have wide reputation to work as a WebSocket client.  
 By using the IRIS adapter it becomes easy to control it and to consume the results as a   
 Client for WebSocket Servers and to collect the replies in Caché, Ensemble, ..   
@@ -32,11 +32,12 @@ and with this echo server you get back a Global as output
      ^WsockOut(5)="for replies"
      ^WsockOut(6)="exit"
 
-the server is controlled by ^ZSocketRun from IRIS  
-     -1 => stop server and exit  
-	     0 => wait for action  
-      1 => sent to echo server  
-                	^ZSocketRun(0)= echo server => "wss://echo.websocket.org/"  
+the server is controlled by ^ZSocketRun from IRIS   
+ 
+    -1 => stop server and exit  
+     0 => wait for action  
+     1 => sent to echo server  
+     ^ZSocketRun(0)= echo server => "wss://echo.websocket.org/"  
 
 The webSocket Servis is started vom OS commandline:  
 
@@ -49,7 +50,7 @@ you can follow the progress n console output
         *****************************
         *** no IRIS host defined ****
         Connect to IRIS on: localhost
-Successfully connected to InterSystems IRIS.
+  Successfully connected to InterSystems IRIS.
         echoserver:  wss://echo.websocket.org/
         ** Lines to process: 6 **
         ********* next turn *********
