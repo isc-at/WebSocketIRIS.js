@@ -50,7 +50,7 @@ You can follow the progress in console output
         *****************************
         *** no IRIS host defined ****
         Connect to IRIS on: localhost
-  Successfully connected to InterSystems IRIS.
+    Successfully connected to InterSystems IRIS.
         echoserver:  wss://echo.websocket.org/
         ** Lines to process: 6 **
         ********* next turn *********
@@ -58,19 +58,19 @@ You can follow the progress in console output
 
         * WebSocket Client connected *
         ****** Client is ready ******
-Line: 1 text> 'Hello'
-Received: 1 > 'Hello'
-Line: 2 text> 'World !'
-Received: 2 > 'World !'
-Line: 3 text> 'Robert'
-Received: 3 > 'Robert'
-Line: 4 text> 'is waiting'
-Received: 4 > 'is waiting'
-Line: 5 text> 'for replies'
-Received: 5 > 'for replies'
+    Line: 1 text> 'Hello'
+    Received: 1 > 'Hello'
+    Line: 2 text> 'World !'
+    Received: 2 > 'World !'
+    Line: 3 text> 'Robert'
+    Received: 3 > 'Robert'
+    Line: 4 text> 'is waiting'
+    Received: 4 > 'is waiting'
+    Line: 5 text> 'for replies'
+    Received: 5 > 'for replies'
         *** wait 3sec for request ***
-Line: 6 text> 'exit'
-Received: 6 > 'exit'
+    Line: 6 text> 'exit'
+    Received: 6 > 'exit'
 
         ******* lines sent: 6 ******
         *** replies received: 6 ****
