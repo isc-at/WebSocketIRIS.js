@@ -42,13 +42,10 @@ the server is controlled by ^ZSocketRun from IRIS
      1 => sent to echo server  
      ^ZSocketRun(0)= echo server => "wss://echo.websocket.org/"  
 
-The webSocket Servis is started vom OS commandline:  
+The WebSocket Service is started from OS command line.  
+You can follow the progress in console output
 
-     c:\user>node WeBSockerIRIS.js
-          
-you can follow the progress n console output
-
-      C:\Program Files\nodejs\cache>node WsockIris.js
+      C:\Program Files\nodejs\cache>node WebSocketIRIS.js
 
         *****************************
         *** no IRIS host defined ****
