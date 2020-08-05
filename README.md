@@ -82,3 +82,5 @@ You can follow the progress in console output
         *** wait 3sec for request ***
         *** wait 3sec for request ***
         *** Client Service closed ***
+
+[Comment in DC](https://community.intersystems.com/post/client-websockets-based-nodejs#comment-128726)
