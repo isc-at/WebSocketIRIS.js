@@ -108,7 +108,7 @@ set ^WsockIn(6)="exit"
 set ^ZSocketRun(0)="wss://echo.websocket.org/"  ;echo server
 set ^ZSocketRun=1   ; => send to echo server 
 ~~~
-Now activate your NodeJs client  
+Now activate your Node.js client  
 Have the external IP address and the SuperServerPort ready  !   
 default: localhost:1972
 ~~~
