@@ -1,8 +1,4 @@
-~~~
- This is a coding example working on IRIS 2020.1  
- It will not be kept in sync with new versions      
- It is also NOT serviced by InterSystems Support !   
-~~~  
+#### Docker Support added
 
 This is now the version compatible to IRIS using _IRIS Native API for Node.js_   
 which is significantly different from the interface availaible for Caché.  
@@ -13,20 +9,29 @@ Client for WebSocket Servers and to collect the replies in IRIS.
 
 I used node-v10.15.1-x64.msi and intersystems-iris-native package
 
-You provide a Global for input:
-
-     ^WsockIn="wss://echo.websocket.org/"
-     ^WsockIn(0)=6
-     ^WsockIn(1)="Hello"
-     ^WsockIn(2)="World !"
-     ^WsockIn(3)="Robert"
-     ^WsockIn(4)="is waiting"
-     ^WsockIn(5)="for replies"
-     ^WsockIn(6)="exit"
-
+### How it works
+You provide a Global for input in namespace USER (default)
+~~~
+set ^WsockIn="wss://echo.websocket.org/"
+set ^WsockIn(0)=6set ^WsockIn(1)="Hello"
+set ^WsockIn(2)="World !"
+set ^WsockIn(3)="Robert"
+set ^WsockIn(4)="is waiting"
+set ^WsockIn(5)="for replies"
+set ^WsockIn(6)="exit"
+~~~
+the server is controlled by ^ZSocketRun from IRIS   
+~~~ 
+set ^ZSocketRun(0)="wss://echo.websocket.org/"  ;echo server
+set ^ZSocketRun=1   ; => send to echo server  
+;    -1 => stop server and exit  
+;     0 => wait for action  
+~~~
 and from echo server you get back a Global as output  
 written by Node.js using the Native API for Node.js
-
+~~~
+zwrite ^WsockOut
+      ^ZSocketOut="wss://echo.websocket.org/"
      ^WsockOut(0)=6
      ^WsockOut(1)="Hello"
      ^WsockOut(2)="World !"
@@ -34,17 +39,11 @@ written by Node.js using the Native API for Node.js
      ^WsockOut(4)="is waiting"
      ^WsockOut(5)="for replies"
      ^WsockOut(6)="exit"
-
-the server is controlled by ^ZSocketRun from IRIS   
- 
-    -1 => stop server and exit  
-     0 => wait for action  
-     1 => sent to echo server  
-     ^ZSocketRun(0)= echo server => "wss://echo.websocket.org/"  
-
+~~~
+### local installation and operation
 The WebSocket Service is started from OS command line.  
 You can follow the progress in console output
-
+~~~
       C:\Program Files\nodejs\cache>node WebSocketIRIS.js
 
         *****************************
@@ -82,5 +81,46 @@ You can follow the progress in console output
         *** wait 3sec for request ***
         *** wait 3sec for request ***
         *** Client Service closed ***
-
+~~~
 [Comment in DC](https://community.intersystems.com/post/client-websockets-based-nodejs#comment-128726)
+
+## Docker support
+### Prerequisites
+Make sure you have git and Docker desktop installed.
+### Installation
+Clone/git pull the repo into any local directory      
+.    (git clone https://github.com/rcemper/WebSocketIRIS.js.git)    
+    
+Open the terminal in this directory, build and run the container:    
+~~~
+ docker-compose up -d
+~~~
+Next open a IRIS session in namespace USER and prepare the Globals for testing  
+~~~
+set ^WsockIn="wss://echo.websocket.org/"
+set ^WsockIn(0)=6set ^WsockIn(1)="Hello"
+set ^WsockIn(2)="World !"
+set ^WsockIn(3)="Robert"
+set ^WsockIn(4)="is waiting"
+set ^WsockIn(5)="for replies"
+set ^WsockIn(6)="exit"
+set ^ZSocketRun(0)="wss://echo.websocket.org/"  ;echo server
+set ^ZSocketRun=1   ; => send to echo server 
+~~~
+Now activate your NodeJs client  
+Have the external IP address and the SuperServerPort ready  !   
+default: localhost:1972
+~~~
+docker-compose exec wsock node WebSocketIRIS.js <ip-adr>:<port>
+
+platform = linux: ubuntu: x64
+
+        *****************************
+        Connect to IRIS on: 192.168.0.9:57771
+Successfully connected to InterSystems IRIS.
+        echoserver:  wss://echo.websocket.org/
+        ** Lines to process: 6 **
+        ********* next turn *********
+        ******* Startup done ********
+~~~
+
