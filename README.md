@@ -86,11 +86,12 @@ You can follow the progress in console output
 
 ## Docker support
 ### Prerequisites
-Make sure you have git and Docker desktop installed.
+Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
 ### Installation
-Clone/git pull the repo into any local directory      
-.    (git clone https://github.com/rcemper/WebSocketIRIS.js.git)    
-    
+Clone/git pull the repo into any local directory   
+~~~
+  git clone https://github.com/rcemper/WebSocketIRIS.js.git    
+~~~    
 Open the terminal in this directory, build and run the container:    
 ~~~
  docker-compose up -d
