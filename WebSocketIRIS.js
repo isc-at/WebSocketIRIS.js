@@ -1,16 +1,22 @@
 // JavaScript Document
 // get order from Global ^ZSocketIn
-//       ^ZSocketIn=""
-//       ^ZSocketIn(0)=6
-//       ^ZSocketIn(1)="Hello"
-//       ^ZSocketIn(2)="World !"
-//       ^ZSocketIn(3)="Robert"
-//       ^ZSocketIn(4)="is waiting"
-//       ^ZSocketIn(5)="for replies"
-//       ^ZSocketIn(6)="exit"
+// set ^ZSocketIn=""
+// set ^ZSocketIn(0)=6
+// set ^ZSocketIn(1)="Hello"
+// set ^ZSocketIn(2)="World !"
+// set ^ZSocketIn(3)="Robert"
+// set ^ZSocketIn(4)="is waiting"
+// set ^ZSocketIn(5)="for replies"
+// set ^ZSocketIn(6)="exit"
 //
-// and set the reply in Global ^ZSocketOut
-//         ^ZSocketIn="wss://echo.websocket.org/"
+// server loop controlled by ^ZSocketRun
+// set ^ZSocketRun(0)="wss://echo.websocket.org/" ; echo server
+// set ^ZSocketRun=1 ; send to echo server
+//       -1 => stop server and exit
+//	      0 => wait for next action
+//
+// and get the reply in Global ^ZSocketOut
+// zwrite ^ZSocketOut
 //         ^ZSocketOut(0)=6
 //         ^ZSocketOut(1)="Hello"
 //         ^ZSocketOut(2)="World !"
@@ -19,11 +25,6 @@
 //         ^ZSocketOut(5)="for replies"
 //         ^ZSocketOut(6)="exit"
 //
-// server loop controlles by ^ZSocketRun
-//       -1 => stop server and exit
-//	      0 => wait for action
-//        1 => sent to echo server
-//       	^ZSocketRun(0)= echo server => "wss://echo.websocket.org/"
 //
 const irisnative = require('intersystems-iris-native')
 const W3CWebSocket = require('websocket').w3cwebsocket;
@@ -37,9 +38,16 @@ if (ip.toString()=="") {
 //	process.exit();
 	ip="localhost";  
 	}
-console.log("\tConnect to IRIS on: "+ip) ;
+var port = ip.toString().split(":")[1] ;  	
+if (port.toString()=="") {
+	console.log("\t*** no IRIS port defined ****") ;
+	port=1972;  
+	}
+else {
+	ip=ip.toString().split(":")[0]
+}   
+console.log("\tConnect to IRIS on: " + ip + ":" + port) ;
 
-var port = 51773 ;
 var namespace = "USER" ;
 var username = "_system" ;
 var password = "SYS" ;
