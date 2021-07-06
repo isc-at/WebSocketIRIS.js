@@ -39,7 +39,7 @@ if (ip.toString()=="") {
 	ip="localhost";  
 	}
 var port = ip.toString().split(":")[1] ;  	
-if (port.toString()=="") {
+if (port==undefined) {
 	console.log("\t*** no IRIS port defined ****") ;
 	port=1972;  
 	}
