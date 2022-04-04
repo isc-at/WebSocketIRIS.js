@@ -13,7 +13,8 @@ I used node-v10.15.1-x64.msi and intersystems-iris-native package
 You provide a Global for input in namespace USER (default)
 ~~~
 set ^WsockIn="wss://ws.postman-echo.com/raw"
-set ^WsockIn(0)=6set ^WsockIn(1)="Hello"
+set ^WsockIn(0)=6
+set ^WsockIn(1)="Hello"
 set ^WsockIn(2)="World !"
 set ^WsockIn(3)="Robert"
 set ^WsockIn(4)="is waiting"
