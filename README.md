@@ -125,3 +125,5 @@ Successfully connected to InterSystems IRIS.
         ******* Startup done ********
 ~~~
 
+### Code Quality 
+![CodeQuality](https://raw.githubusercontent.com/rcemper/WebSocketIRIS.js/master/CodeQuality.JPG) 
