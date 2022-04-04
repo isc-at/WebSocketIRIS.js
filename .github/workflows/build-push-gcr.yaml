@@ -8,9 +8,9 @@ on:
 
 env:
   # Change this section according to your needs
-  IMAGE_NAME:   gbl-to-json-xla
-  SERVICE:      gbl-to-json-xla
-  DOMAIN_NAME:  gbl-to-json-xla.demo.community.intersystems.com
+  IMAGE_NAME:   websocket-iris-js
+  SERVICE:      websocket-iris-js
+  DOMAIN_NAME:  websocket-iris-js.demo.community.intersystems.com
 # Leave this section untouched
   PROJECT_ID:   iris-community-demos
   CLUSTER_NAME: demo
