@@ -7,6 +7,6 @@ npm install websocket --save
 npm install 
 while true
 do
-	# echo "Press [CTRL+C] to stop.."
+	echo "Press [CTRL+C] to stop.."
 	sleep 60
 done
