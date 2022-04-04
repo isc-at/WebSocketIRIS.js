@@ -12,7 +12,7 @@ I used node-v10.15.1-x64.msi and intersystems-iris-native package
 ### How it works
 You provide a Global for input in namespace USER (default)
 ~~~
-set ^WsockIn="wss://echo.websocket.org/"
+set ^WsockIn="wss://ws.postman-echo.com/raw"
 set ^WsockIn(0)=6set ^WsockIn(1)="Hello"
 set ^WsockIn(2)="World !"
 set ^WsockIn(3)="Robert"
@@ -22,7 +22,7 @@ set ^WsockIn(6)="exit"
 ~~~
 the server is controlled by ^ZSocketRun from IRIS   
 ~~~ 
-set ^ZSocketRun(0)="wss://echo.websocket.org/"  ;echo server
+set ^ZSocketRun(0)="wss://ws.postman-echo.com/raw"  ;echo server
 set ^ZSocketRun=1   ; => send to echo server  
 ;    -1 => stop server and exit  
 ;     0 => wait for action  
@@ -31,7 +31,7 @@ and from echo server you get back a Global as output
 written by Node.js using the Native API for Node.js
 ~~~
 zwrite ^WsockOut
-      ^ZSocketOut="wss://echo.websocket.org/"
+      ^ZSocketOut="wss://ws.postman-echo.com/raw"
      ^WsockOut(0)=6
      ^WsockOut(1)="Hello"
      ^WsockOut(2)="World !"
@@ -50,7 +50,7 @@ You can follow the progress in console output
         *** no IRIS host defined ****
         Connect to IRIS on: localhost
     Successfully connected to InterSystems IRIS.
-        echoserver:  wss://echo.websocket.org/
+        echoserver:  wss://ws.postman-echo.com/raw
         ** Lines to process: 6 **
         ********* next turn *********
         ******* Startup done ********
@@ -98,14 +98,14 @@ Open the terminal in this directory, build and run the container:
 ~~~
 Next open a IRIS session in namespace USER and prepare the Globals for testing  
 ~~~
-set ^WsockIn="wss://echo.websocket.org/"
+set ^WsockIn="wss://ws.postman-echo.com/raw"
 set ^WsockIn(0)=6set ^WsockIn(1)="Hello"
 set ^WsockIn(2)="World !"
 set ^WsockIn(3)="Robert"
 set ^WsockIn(4)="is waiting"
 set ^WsockIn(5)="for replies"
 set ^WsockIn(6)="exit"
-set ^ZSocketRun(0)="wss://echo.websocket.org/"  ;echo server
+set ^ZSocketRun(0)="wss://ws.postman-echo.com/raw"  ;echo server
 set ^ZSocketRun=1   ; => send to echo server 
 ~~~
 Now activate your Node.js client  
@@ -119,7 +119,7 @@ platform = linux: ubuntu: x64
         *****************************
         Connect to IRIS on: 192.168.0.9:57771
 Successfully connected to InterSystems IRIS.
-        echoserver:  wss://echo.websocket.org/
+        echoserver:  wss://ws.postman-echo.com/raw
         ** Lines to process: 6 **
         ********* next turn *********
         ******* Startup done ********
