@@ -10,7 +10,6 @@
 // set ^ZSocketIn(6)="exit"
 //
 // server loop controlled by ^ZSocketRun
-// set ^ZSocketRun(0)="wss://echo.websocket.org/" ; echo server
 // set ^ZSocketRun(0)="wss://ws.postman-echo.com/raw" ; echo server
 // set ^ZSocketRun=1 ; send to echo server
 //       -1 => stop server and exit
