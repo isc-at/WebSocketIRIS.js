@@ -82,7 +82,7 @@ You can follow the progress in console output
         *** wait 3sec for request ***
         *** Client Service closed ***
 ~~~
-[Comment in DC](https://community.intersystems.com/post/client-websockets-based-nodejs#comment-128726)
+[Article in DC](https://community.intersystems.com/post/client-websockets-based-nodejs#comment-128726)
 
 ## Docker support
 ### Prerequisites
@@ -127,3 +127,6 @@ Successfully connected to InterSystems IRIS.
 
 ### Code Quality 
 ![CodeQuality](https://raw.githubusercontent.com/rcemper/WebSocketIRIS.js/master/CodeQuality.JPG) 
+
+The Errors and Smells you see relate to the ISC provided standard connectors.
+It proves once more that the Code Quality generates false positives! 
