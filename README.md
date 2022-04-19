@@ -1,7 +1,7 @@
 #### Docker Support added
 
 This is now the version compatible to IRIS using _IRIS Native API for Node.js_   
-which is significantly different from the interface availaible for Caché.  
+which is significantly different from the interface availaible for Caché.      
 
 Node / JavaScript have wide reputation to work as WebSocket client.  
 By using the IRIS adapter it becomes easy to control and to consume the results as a   
