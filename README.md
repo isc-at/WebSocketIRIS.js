@@ -128,6 +128,3 @@ Successfully connected to InterSystems IRIS.
 
 ### Code Quality ###    
 ![CodeQuality](https://raw.githubusercontent.com/rcemper/WebSocketIRIS.js/master/CodeQuality.JPG)      
-
-The Errors and Smells you see relate to the ISC provided standard connectors.
-It proves once more that the Code Quality generates false positives! 
